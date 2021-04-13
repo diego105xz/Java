@@ -1,3 +1,4 @@
+<%@page import="Suporte.Tabelas" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" errorPage="TratarError.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -46,6 +47,9 @@
                 if (imc >= 40) {
                     out.println("Obesidade morbida ");
                 }
+                
+                out.println(new Tabelas().CalculoImc(peso, altura));
+                
             }catch(Exception ex){
                 out.print("Erro = "+ ex.getMessage());
             }
