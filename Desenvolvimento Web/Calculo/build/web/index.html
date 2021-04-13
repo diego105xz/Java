@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Exemplo IMC</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2> Calcular IMC </h2>
+
+        <div id="div_imc">
+            <p> IMC = Índice de massa Corporea</p>
+            <form action="calculo.jsp" method="get" target="result">
+                Peso:<input type="text" name="peso"><br>
+                Altura<input type="text" name="altura"><br>
+
+                <input type="submit" name="enviar" value="Calcular">
+
+            </form>
+
+        </div>
+        <p>A Organização Mundial de Saúde utiliza a seguinte tabela de peso ideal pelo IMC:</p>
+        <div align="left">
+            <table border="1" cellpadding="10" width="300" cellspacing="1">
+                <tr><td><b>Situação</b></td>      <td><b>IMC em adultos</b></td></tr>
+                <tr><td>abaixo do peso ideal</td>   <td>abaixo de 18,5</td></tr>
+                <tr><td>no peso ideal</td>              <td>entre 18,5 e 25</td></tr>
+                <tr><td>acima do peso ideal</td>     <td>entre 25 e 30</td></tr>
+                <tr><td>obeso</td>                        <td>acima de 30</td></tr>
+            </table>
+        </div>
+        <p>Esta tabela da da Organização Mundial de Saúde tem vantagem de ser simples e fácil de usar com números redondos.</p>
+    </body>
+</html>
