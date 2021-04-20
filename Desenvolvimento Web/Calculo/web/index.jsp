@@ -1,4 +1,5 @@
 <%@page import="Suporte.Tabelas"%>
+<%@page import="Suporte.Paciente"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -27,6 +28,18 @@
             <iframe name="result" width="300" height="200"></iframe>
         </div>
         <br>
-        <%=new Tabelas().getImc()%>              
+        <%=new Tabelas().getImc()%>  
+        
+        <%
+            Paciente p = new Paciente();
+            
+            p.setNome("Daniel");
+            p.setIdade(30);
+            p.setCpf("123.456.789-12");
+            
+            out.println("Nome = " +p.getNome()+"<br>");
+            out.println(p.getCpf());
+
+        %>
     </body>
 </html>
