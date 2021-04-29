@@ -28,7 +28,11 @@
             <iframe name="result" width="300" height="200"></iframe>
         </div>
         <br>
-        <%=new Tabelas().getImc()%>  
+        <%//=new Tabelas().getImc()%>  
+        
+        <%
+            out.print(new Tabelas().nivel_imc(0, 3));
+        %>
         
         <%
             Paciente p = new Paciente();
@@ -41,5 +45,6 @@
             out.println(p.getCpf());
 
         %>
+        <br>
     </body>
 </html>

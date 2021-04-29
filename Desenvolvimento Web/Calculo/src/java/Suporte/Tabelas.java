@@ -27,4 +27,18 @@ public class Tabelas {
         return "IMC = " + String.format("%.2f",imc);
     }
     
+    public String nivel_imc(int inicio, int fim){
+        String result = "";
+        
+        int nivelIMC[] = {10, 12, 13, 14 ,15 ,17 ,18 ,25 ,30 ,42, 51, 60};
+            
+           // nivelIMC = new int[]{18, 25, 30};
+        for(int i = inicio; i < fim ; i++){
+           result += "<br>Valor"+(i+1)+" = "+nivelIMC[i];  
+        }          
+        result += "<br><br>";
+           
+        return result;
+    }
+    
 }
