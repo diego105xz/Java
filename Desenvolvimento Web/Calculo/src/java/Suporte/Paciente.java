@@ -1,18 +1,26 @@
 package Suporte;
 
 public class Paciente {
+    
     private String nome;
+    private String cpf;
+    
     private int idade;
-    private String Cpf;
     private float peso;
     private float altura;
     private int pressao_min;
     private int pressao_max;
     private String sexo;
     private String tipo_sangue;
-    
-    // METODO GET
 
+    public Paciente(String nome, String cpf, int idade) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.idade = idade;
+    }
+
+      
+    //  MÉTODO GET
     public String getNome() {
         return nome;
     }
@@ -21,20 +29,20 @@ public class Paciente {
         this.nome = nome;
     }
 
+    public String getCpf() {
+        return "CPF = " +  cpf + "<br>";
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
     public int getIdade() {
         return idade;
     }
 
     public void setIdade(int idade) {
         this.idade = idade;
-    }
-
-    public String getCpf() {
-        return Cpf;
-    }
-
-    public void setCpf(String Cpf) {
-        this.Cpf = Cpf;
     }
 
     public float getPeso() {
@@ -84,6 +92,8 @@ public class Paciente {
     public void setTipo_sangue(String tipo_sangue) {
         this.tipo_sangue = tipo_sangue;
     }
+
     
-       
+    
+    
 }

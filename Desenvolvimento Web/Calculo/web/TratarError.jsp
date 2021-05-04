@@ -1,10 +1,4 @@
-<%-- 
-    Document   : TratarError
-    Created on : 06/04/2021, 11:03:09
-    Author     : Diego
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8" isErrorPage="true"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
     <head>
