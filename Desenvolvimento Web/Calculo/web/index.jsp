@@ -5,6 +5,43 @@
 
 <!DOCTYPE html>
 
+<%!
+    float tot1, tot2, tot3 = 0;
+    int vezes = 0;
+    
+    private void notas(float v1, float v2, float v3){
+        this.vezes++;
+        this.tot1 += v1;
+        this.tot2 += v2;
+        this.tot3 += v3;
+    }
+
+    private String medias(){
+        String sRet = "";
+        sRet += "<br>Media Nota 1: " + (this.tot1/vezes);
+        sRet += "<br>Media Nota 2: " + (this.tot2/vezes);
+        sRet += "<br>Media Nota 3: " + (this.tot3/vezes);
+        return sRet;
+    }
+
+    private String status(){
+        float notas=0;
+        String resposta = "";
+        
+        notas += (this.tot1/vezes);
+        notas += (this.tot2/vezes);
+        notas += (this.tot3/vezes);
+        
+        if((notas/3)>= 6.0){
+            resposta = "<br>Aprovado";
+        }else{
+            resposta = "<br>Reprovado";
+        }
+        return resposta;
+    }
+
+%>
+
 <html>
     <head>
         <title>Exemplo IMC</title>
@@ -66,6 +103,17 @@
             //out.println("Nome = " + p.getNome() + "<br>");
             //out.println("Idade = " + p.getIdade() + "<br>");
             //out.println(p.getCpf());
+            
+
+             out.print("<br>-----------------------<br>");
+             notas(10,8,4);
+             notas(6,8,4.5f);
+             notas(5,3,8.5f);
+             out.println("Média entre as notas Av1, Av2 e Av3");
+             out.println(medias());
+             
+             out.print("<br>-----------------------<br>");
+             out.println(status());
         %>
         
         <br>

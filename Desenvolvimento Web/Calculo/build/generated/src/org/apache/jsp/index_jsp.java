@@ -5,6 +5,8 @@ import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import Suporte.Tabelas;
 import Suporte.Paciente;
+import java.util.List;
+import java.util.ArrayList;
 
 public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -32,7 +34,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/html;charset=UTF-8");
+      response.setContentType("text/html");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -46,7 +48,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
+      out.write("\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <title>Exemplo IMC</title>\n");
@@ -54,44 +59,71 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <h2> Calcular IMC </h2>\n");
-      out.write("        \n");
+      out.write("        <h2>Calcular IMC</h2>\n");
+      out.write("\n");
       out.write("        <div id=\"div_imc\">\n");
-      out.write("            <p> IMC = Índice de massa Corporea</p>\n");
+      out.write("            <p>IMC = Índice de Massa Corporea</p>\n");
       out.write("            <form action=\"calculo.jsp\" method=\"get\" target=\"result\">\n");
-      out.write("                Peso:<input type=\"text\" name=\"peso\"><br>\n");
-      out.write("                Altura<input type=\"text\" name=\"altura\"><br>\n");
+      out.write("                Peso: <input type=\"text\" name=\"peso\"><br>\n");
+      out.write("                Altura: <input type=\"text\" name=\"altura\"><br>\n");
       out.write("\n");
-      out.write("                <input type=\"submit\" name=\"enviar\" value=\"Calcular\">\n");
-      out.write("\n");
+      out.write("                <input type=\"submit\" name=\"enviar\" value=\"Calcular\">       \n");
       out.write("            </form>\n");
-      out.write("\n");
       out.write("        </div>\n");
       out.write("        <br><br>\n");
       out.write("        \n");
       out.write("        <div id=\"div_resultado\">\n");
       out.write("            <iframe name=\"result\" width=\"300\" height=\"200\"></iframe>\n");
       out.write("        </div>\n");
-      out.write("        <br>\n");
-      out.write("        ");
+      out.write("   \n");
+      out.write("        <br> \n");
+      out.write("        \n");
+      out.write("          ");
       out.print(new Tabelas().getImc());
-      out.write("  \n");
+      out.write("\n");
       out.write("        \n");
       out.write("        ");
 
-            Paciente p = new Paciente();
-            
-            p.setNome("Daniel");
-            p.setIdade(30);
-            p.setCpf("123.456.789-12");
-            
-            out.println("Nome = " +p.getNome()+"<br>");
-            out.println(p.getCpf());
+           //int nivelIMC[] = {10,12,13,14,15,17,18,25,30,31,42,51,60};
+           out.print("Primeiro teste");
+           out.print(new Tabelas().nivel_Imc(10));
+           out.print("<br><br>Segundo teste");
+           out.print(new Tabelas().nivel_Imc(1,5));
+           out.print("<br><br>Terceiro teste");
+           out.print(new Tabelas().nivel_Imc());
 
         
       out.write("\n");
+      out.write("        \n");
+      out.write("        ");
+
+            //Paciente p = new Paciente("Fábio","123.456.789-12",18);
+            
+            List<Paciente> p = new ArrayList<Paciente>();
+            
+            p.add(new Paciente("Nome","123.456.789-12",18));
+            p.add(new Paciente("João","456.456.789-12",40));
+            p.add(new Paciente("Maria","789.456.789-12",50));
+            p.add(new Paciente("Robson","321.456.789-12",20));
+            p.add(new Paciente("Aline", "2211-3324", 17));
+            p.add(new Paciente("Mirian", "6666-8888", 23));
+            
+            for(Paciente valor :p){
+                out.print("----------------------<br>");
+                out.print("Nome = " + valor.getNome() + "<br>");
+                out.print(valor.getCpf());
+                out.print("Idade: " + valor.getIdade()+ "<br>");
+            }
+            
+            //out.println("Nome = " + p.getNome() + "<br>");
+            //out.println("Idade = " + p.getIdade() + "<br>");
+            //out.println(p.getCpf());
+        
+      out.write("\n");
+      out.write("        \n");
+      out.write("        <br>\n");
       out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
